@@ -298,10 +298,29 @@ public class FXMLDocumentController implements Initializable {
     }
 
     @FXML
-    void showPoint(ActionEvent event){
-        
+    void showPoint(ActionEvent event) {
+        try {
+            //((Stage) this.anchorPane.getScene().getWindow()).hide(); Able but ...
+            //FXMLGrandPanelController.setFXMLDocumentController(this);
+
+            Parent root = FXMLLoader.load(getClass().getResource("/showPointWindow/FXMLShowGrandPanel.fxml"));
+            //root.setStyle("-fx-background-color: transparent");
+            Scene scene = new Scene(root);
+            scene.setFill(null);
+            Stage stage = new Stage(StageStyle.TRANSPARENT);
+            stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setFullScreen(true);
+            stage.setFullScreenExitHint("座標を取得する箇所をクリック");
+            stage.setAlwaysOnTop(false);
+            stage.showAndWait();
+            //((Stage) this.anchorPane.getScene().getWindow()).show();
+            //FXMLGrandPanelController.setFXMLDocumentController(this);
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-    
+
     @FXML
     void clearItems(ActionEvent event) {
         //error
@@ -332,7 +351,7 @@ public class FXMLDocumentController implements Initializable {
             FXMLDocumentController.this.lastMousePointX = (int) Math.floor(e.getScreenX());
             FXMLDocumentController.this.lastMousePointY = (int) Math.floor(e.getScreenY());
         });
-/*
+        /*
         tVdata.selectionModelProperty().addListener((Observable observable) -> {
             if (tVdata.getSelectionModel() != null) { // これ必要
                 if (tVdata.getSelectionModel().getSelectedIndex() == 0) {
@@ -340,8 +359,8 @@ public class FXMLDocumentController implements Initializable {
                 }
             }
         });
-        */
-        }
+         */
+    }
     /*
     public void showAgain() {
         ((Stage) this.anchorPane.getScene().getWindow()).setIconified(false);
