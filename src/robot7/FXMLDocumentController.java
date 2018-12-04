@@ -299,7 +299,7 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     void showPoint(ActionEvent event){
-        System.out.println("showPoint");
+        
     }
     
     @FXML
