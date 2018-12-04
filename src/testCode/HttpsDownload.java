@@ -56,7 +56,7 @@ InputStream is = connection.getInputStream();
 
             //	文字コードを指定した読み込み
             InputStreamReader isr
-                    = new InputStreamReader(urc.getInputStream(), "Shift-JIS");
+                    = new InputStreamReader(urc.getInputStream(), "Shift-JIS"); 
             BufferedReader br = new BufferedReader(isr);
             String line;
             while ((line = br.readLine()) != null) {
