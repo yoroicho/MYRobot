@@ -27,8 +27,11 @@ public class SendControlKey {
            // robot.mouseMove(100, 100);
            // robot.mousePress(1);
             robot.keyPress(KeyEvent.VK_0);
+            robot.keyRelease(KeyEvent.VK_0);
             robot.keyPress(KeyEvent.VK_DOWN);
+            robot.keyRelease(KeyEvent.VK_DOWN);
             robot.keyPress(KeyEvent.VK_1);
+            robot.keyRelease(KeyEvent.VK_1);
         } catch (AWTException ex) {
             Logger.getLogger(SendControlKey.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -39,11 +42,12 @@ public class SendControlKey {
                 Mouse.mouseClick(Integer.parseInt("100"),Integer.parseInt("100"));
         try {
             Robot robot = new Robot();
-           // robot.mouseMove(100, 100);
-           // robot.mousePress(1);
             robot.keyPress(KeyEvent.VK_0);
+            robot.keyRelease(KeyEvent.VK_0);
             robot.keyPress(KeyEvent.VK_DOWN);
+            robot.keyRelease(KeyEvent.VK_DOWN);
             robot.keyPress(KeyEvent.VK_1);
+            robot.keyRelease(KeyEvent.VK_1);
         } catch (AWTException ex) {
             Logger.getLogger(SendControlKey.class.getName()).log(Level.SEVERE, null, ex);
         }

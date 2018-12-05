@@ -159,7 +159,7 @@ public class FXMLDocumentController implements Initializable {
         System.out.println("Selectded now " + i);
         Mouse.mouseClick(Integer.parseInt(this.gettFPointX().getText()),
                 Integer.parseInt(this.gettFPointY().getText()));
-// SendControlKey.testSendKey();
+ SendControlKey.testSendKey();
 // System.exit(0);
         FXMLLoader fxmlLoader = new FXMLLoader(
                 getClass().getResource("/FXMLRobotUty/FXMLRobotGrandPanel.fxml"));
@@ -191,7 +191,7 @@ public class FXMLDocumentController implements Initializable {
                     && !typingLetter.substring(1, 2).equals("@")) { // Comment or SendControl
                 switch (typingLetter.substring(2, 9999)){
                     case "u":
-                        SendControlKey.上方キーを送る();
+                       // SendControlKey.上方キーを送る();
                         break;
                     default :
                       MsgBox.plain(typingLetter);  
