@@ -8,6 +8,7 @@ package robot7;
 import FXMLRobotUty.FXMLRobotGrandPanelController;
 import actor.Keyboard;
 import actor.Mouse;
+import actor.SendControlKey;
 import java.awt.AWTException;
 import java.io.File;
 import java.io.IOException;
@@ -158,7 +159,8 @@ public class FXMLDocumentController implements Initializable {
         System.out.println("Selectded now " + i);
         Mouse.mouseClick(Integer.parseInt(this.gettFPointX().getText()),
                 Integer.parseInt(this.gettFPointY().getText()));
-
+// SendControlKey.testSendKey();
+// System.exit(0);
         FXMLLoader fxmlLoader = new FXMLLoader(
                 getClass().getResource("/FXMLRobotUty/FXMLRobotGrandPanel.fxml"));
         Parent root;
@@ -186,8 +188,17 @@ public class FXMLDocumentController implements Initializable {
             stage.setAlwaysOnTop(true);
             //stage.show();
             if (typingLetter.substring(0, 1).equals("@")
-                    && !typingLetter.substring(1, 2).equals("@")) { // Comment.
-                MsgBox.plain(typingLetter);
+                    && !typingLetter.substring(1, 2).equals("@")) { // Comment or SendControl
+                switch (typingLetter.substring(2, 9999)){
+                    case "u":
+                        SendControlKey.上方キーを送る();
+                        break;
+                    default :
+                      MsgBox.plain(typingLetter);  
+                }
+                
+                
+                
             } else { // Will type.
                 System.out.println("これからタイプ" + typingLetter);
                 btnSendToNext.setDisable(true);
